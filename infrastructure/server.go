@@ -8,9 +8,10 @@ import (
 	"os/signal"
 	"time"
 
+	"goapi_admin_products/infrastructure/database"
+
 	"github.com/go-chi/chi"
 	chiMiddleware "github.com/go-chi/chi/middleware"
-	"github.com/ivan-salazar14/apigo_products/infrastructure/database"
 )
 
 //	"github.com/docker/docker/api/server/middleware"
@@ -38,6 +39,7 @@ func newServer(port string, conn *database.Data) *Server {
 	router.Mount("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(200)
 	}))
+	//	ur := handler.NewUserHandler(conn)
 	router.Mount("/products", RoutesProducts(conn))
 	//router.Mount("/health", healthChecker(conn,))
 	//router.Mount("/auth", RoutesLogin(conn, redis))

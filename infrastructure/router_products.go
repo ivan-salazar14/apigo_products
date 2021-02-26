@@ -3,16 +3,17 @@ package infrastructure
 import (
 	"net/http"
 
+	"goapi_admin_products/infrastructure/database"
+
 	"github.com/go-chi/chi"
-	"github.com/ivan-salazar14/apigo_products/infrastructure/database"
 )
 
 func RoutesProducts(conn *database.Data) http.Handler {
 	router := chi.NewRouter()
 
-	lr := handler.NewProductsHandler(conn) //domain
+	//lr := handler.NewProductsHandler(conn) //domain
 
-	router.Get("/")
+	//router.Get("/")
 	//router.Get("/{id}", handler.GetOneHandler)
 	//	router.Post("/", handler.CreateHandler)
 

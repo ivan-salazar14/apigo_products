@@ -1,4 +1,8 @@
 github.com/go-chi/chi v1.5.3 h1:+DVDS9/D3MTbEu3WrrH3oz9oP6PlSPSNj8LLw3X17yU=
 github.com/go-chi/chi v1.5.3/go.mod h1:Q8xfe6s3fjZyMr8ZTv5jL+vxhVaFyCq2s+RvSfzTD0E=
+github.com/ivan-salazar14/apigo_products v0.0.0-20210225225208-705832f0809e h1:Z+3TNBBSWFEvlb4RkvEsFDwIjJRDEVdQk0BvCu63NJk=
+github.com/ivan-salazar14/apigo_products v0.0.0-20210225225208-705832f0809e/go.mod h1:56grA4sy4k4cC4bU2KVVr2uVijvEQsRbRNsMbIzdLpg=
+github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
+github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/lib/pq v1.9.0 h1:L8nSXQQzAYByakOFMTwpjRoHsMJklur4Gi59b6VivR8=
 github.com/lib/pq v1.9.0/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=

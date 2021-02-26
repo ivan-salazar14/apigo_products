@@ -1,13 +1,16 @@
 package main
 
 import (
+	"goapi_admin_products/infrastructure"
 	"log"
+	"os"
 
-	"github.com/ivan-salazar14/apigo_products/infrastructure"
+	_ "github.com/joho/godotenv/autoload"
+	//	"github.com/ivan-salazar14/apigo_products/infrastructure"
 )
 
 func main() {
 	log.Println("starting API cmd")
-	port := "8081" // os.Getenv("API_PORT")
+	port := os.Getenv("API_PORT")
 	infrastructure.Start(port)
 }

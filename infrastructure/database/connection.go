@@ -1,19 +1,10 @@
 package database
 
-// import (
-// 	"database/sql"
-// 	"fmt"
-// 	"log"
-// 	"os"
-// 	"sync"
-
-// 	_ "github.com/lib/pq"
-// )
-
 import (
 	"database/sql"
 	"fmt"
 	"log"
+	"os"
 	"sync"
 
 	_ "github.com/lib/pq" // here
@@ -24,6 +15,7 @@ var (
 	once sync.Once
 )
 
+//Data struct
 type Data struct {
 	DB *sql.DB
 }
@@ -54,12 +46,12 @@ func initDB() {
 
 func getConnection() (*sql.DB, error) {
 
-	DbHost := "127.0.0.1"      //os.Getenv("DB_HOST")
-	DbDriver := "postgres"     //os.Getenv("DB_DRIVER")
-	DbUser := "postgres"       // os.Getenv("DB_USER")
-	DbPassword := "123456"     //os.Getenv("DB_PASSWORD")
-	DbName := "admin_products" //os.Getenv("DB_NAME")
-	DbPort := "5432"           //os.Getenv("DB_PORT")
+	DbHost := os.Getenv("DB_HOST") //"127.0.0.1"
+	DbDriver := os.Getenv("DB_DRIVER")
+	DbUser := os.Getenv("DB_USER")
+	DbPassword := os.Getenv("DB_PASSWORD")
+	DbName := os.Getenv("DB_NAME")
+	DbPort := os.Getenv("DB_PORT")
 
 	uri := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", DbHost, DbPort, DbUser, DbName, DbPassword)
 

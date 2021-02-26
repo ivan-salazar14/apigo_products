@@ -6,7 +6,6 @@ import (
 	"os"
 
 	_ "github.com/joho/godotenv/autoload"
-	//	"github.com/ivan-salazar14/apigo_products/infrastructure"
 )
 
 func main() {

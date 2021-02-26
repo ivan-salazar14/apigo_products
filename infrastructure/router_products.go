@@ -3,6 +3,7 @@ package infrastructure
 import (
 	"net/http"
 
+	v1Product "goapi_admin_products/domain/products/application/v1"
 	"goapi_admin_products/infrastructure/database"
 
 	"github.com/go-chi/chi"
@@ -11,13 +12,15 @@ import (
 func RoutesProducts(conn *database.Data) http.Handler {
 	router := chi.NewRouter()
 
-	//lr := handler.NewProductsHandler(conn) //domain
+	products := v1Product.NewProductHandler(conn) //domain
+	router.Mount("/products", routesProduct(products))
 
-	//router.Get("/")
-	//router.Get("/{id}", handler.GetOneHandler)
-	//	router.Post("/", handler.CreateHandler)
+	return router
+}
 
-	//router.Put("/{id}", handler.UpdateHandler)
-	//router.Delete("/{id}", handler.DeleteHandler)
+//Router user
+func routesProduct(handler *v1Product.ProductRouter) http.Handler {
+	router := chi.NewRouter()
+	router.Post("/", handler.CreateProductHandler)
 	return router
 }

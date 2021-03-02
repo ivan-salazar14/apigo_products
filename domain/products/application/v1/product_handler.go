@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"encoding/json"
 	"fmt"
 	"goapi_admin_products/domain/products/domain/model"
 	repoDomain "goapi_admin_products/domain/products/domain/repository"
@@ -27,6 +28,12 @@ func (prod *ProductRouter) CreateProductHandler(w http.ResponseWriter, r *http.R
 	var product model.Product
 
 	ctx := r.Context()
+
+	err := json.NewDecoder(r.Body).Decode(&product)
+	if err != nil {
+		_ = middleware.HTTPError(w, r, http.StatusBadRequest, "bad request", err.Error())
+		return
+	}
 
 	result, err := prod.Repo.CreateProductHandler(ctx, &product)
 	if err != nil {

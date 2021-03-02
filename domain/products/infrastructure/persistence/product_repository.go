@@ -29,7 +29,7 @@ func (sr *sqlProductRepo) CreateProductHandler(ctx context.Context, product *mod
 	}
 	defer stmt.Close()
 
-	row := stmt.QueryRowContext(ctx, &product.ProductoID, &product.ProductoNombre, &product.ProductoCantidad, &product.ProductoUsercreacion, &product.ProductoFechCreacion, &product.ProductoUserModificacion, &product.ProductoFechaModificacion)
+	row := stmt.QueryRowContext(ctx, &product.ProductoID, &product.ProductoNombre, &product.ProductoCantidad, &product.ProductoUsercreacion, &product.ProductoUserModificacion)
 
 	var idResult string
 	err = row.Scan(&idResult)

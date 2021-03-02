@@ -14,7 +14,6 @@ func RoutesProducts(conn *database.Data) http.Handler {
 
 	products := v1Product.NewProductHandler(conn) //domain
 	router.Mount("/products", routesProduct(products))
-
 	return router
 }
 

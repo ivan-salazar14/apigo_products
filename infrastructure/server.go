@@ -36,11 +36,11 @@ func newServer(port string, conn *database.Data) *Server {
 	//	router.Use(middleware.CORSMiddleware)
 
 	//default path to be used in the health checker
-	router.Mount("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(200)
-	}))
+	// router.Mount("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	// 	w.WriteHeader(200)
+	// }))
 	//	ur := handler.NewUserHandler(conn)
-	router.Mount("/products", RoutesProducts(conn))
+	router.Mount("/", RoutesProducts(conn))
 	//router.Mount("/health", healthChecker(conn,))
 	//router.Mount("/auth", RoutesLogin(conn, redis))
 	//router.Mount("/api/v1", Routes(conn))
